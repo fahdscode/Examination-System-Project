@@ -1,114 +1,103 @@
-
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden;
-}
-
-#register{
-    margin: 50px 100px;
- 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
 }
 
-#regist{
-    display: flex;
-    justify-content: center;   
-    align-items: center; 
-
-    
+#register {
+  margin: 50px 100px;
 }
 
-
-
-.container{
-    width: 70%;
-    gap:10px;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 30px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-
-
+#regist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#title{
-    text-align: center;
+
+.container {
+  width: 70%;
+  gap: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+#title {
+  text-align: center;
 }
 #title p {
-    color: gray;
+  color: gray;
 }
 
-label , button{
-    text-transform: capitalize;
+label,
+button {
+  text-transform: capitalize;
 }
 
-input{
-       height: 40px;
-       border: 1px solid rgb(211, 206, 206);
-       border-radius: 30px;
-       background-color: #E2E8F0;
-       padding:10px 15px;
-
+input {
+  height: 40px;
+  border: 1px solid rgb(211, 206, 206);
+  border-radius: 30px;
+  background-color: #e2e8f0;
+  padding: 10px 15px;
 }
 
-button{
-    background-color: #EA2A33;
-    height: 45px;
-    border-radius: 30px;
-    color: azure;
-    font-weight: bold;
-    margin-top: 20px;
-    border: none;
-    box-shadow: 0 10px 25px rgba(58, 57, 57, 0.1);
+button {
+  background-color: #ea2a33;
+  height: 45px;
+  border-radius: 30px;
+  color: azure;
+  font-weight: bold;
+  margin-top: 20px;
+  border: none;
+  box-shadow: 0 10px 25px rgba(58, 57, 57, 0.1);
 }
 
-.nav  {
-display: flex;
-align-items: center;
-background-color: rgb(255, 249, 249) ;
-padding-left: 15px;
-height: 50px;
-
-} 
+.nav {
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 249, 249);
+  padding-left: 15px;
+  height: 50px;
+}
 
 .nav p {
-    padding: 15px;
-    text-transform: capitalize;
-    font-weight: bold;
- 
-    
+  padding: 15px;
+  text-transform: capitalize;
+  font-weight: bold;
 }
-.nav img{
-    width: 30px;
+.nav img {
+  width: 30px;
 }
-.email , .password ,.repass{
-   display: flex;
-   flex-direction: column;
- position: relative;
-   
-   
+.email,
+.password,
+.repass {
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
-.email img , .password img , .repass img{
-position: absolute;
-left: 15px;
-top:25%;
-width: 15px;
-
-
+.email img,
+.password img,
+.repass img {
+  position: absolute;
+  left: 15px;
+  top: 25%;
+  width: 15px;
 }
 
-
-
-.email input , .password input , .repass input{
-    padding-left: 45px;
+.email input,
+.password input,
+.repass input {
+  padding-left: 45px;
 }
-
 
 * {
   box-sizing: border-box;
@@ -1220,6 +1209,20 @@ body {
   font-weight: 500;
   font-family: inherit;
   text-align: left;
+  cursor: pointer;
+  position: relative;
+}
+
+.exam-option-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .exam-radio {
