@@ -1,3 +1,7 @@
+
+import * as Regex from "./reg.js"
+
+
 const markedToggleBtn = document.getElementById("markedToggleBtn");
 const markedPanel = document.getElementById("markedPanel");
 const answerInputs = document.querySelectorAll(".exam-option-input");

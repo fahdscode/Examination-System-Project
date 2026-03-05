@@ -1586,3 +1586,14 @@ body {
     line-height: 24px;
   }
 }
+
+
+.is-invalid
+{
+ border:5px solid red !important;
+
+}
+
+.is-valid{
+    border:2px solid  green;
+}
