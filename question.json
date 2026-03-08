@@ -1,0 +1,104 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What does HTML stand for?",
+      "choices": [
+        "Hyper Text Markup Language",
+        "High Text Machine Language",
+        "Hyperlinks and Text Markup Language",
+        "Home Tool Markup Language"
+      ],
+      "correct": 0
+    },
+    {
+      "id": 2,
+      "question": "Which language is used for styling web pages?",
+      "choices": [
+        "HTML",
+        "CSS",
+        "Python",
+        "PHP"
+      ],
+      "correct": 1
+    },
+    {
+      "id": 3,
+      "question": "Which language is used to make web pages interactive?",
+      "choices": [
+        "Java",
+        "C++",
+        "JavaScript",
+        "SQL"
+      ],
+      "correct": 2
+    },
+
+    {
+      "id": 5,
+      "question": "Which property is used to change text color in CSS?",
+      "choices": [
+        "background-color",
+        "font-color",
+        "color",
+        "text-style"
+      ],
+      "correct": 2
+    },
+    {
+      "id": 6,
+      "question": "Which HTML tag is used to insert an image?",
+      "choices": [
+        "<image>",
+        "<img>",
+        "<src>",
+        "<pic>"
+      ],
+      "correct": 1
+    },
+    {
+      "id": 7,
+      "question": "Which symbol is used for comments in JavaScript?",
+      "choices": [
+        "//",
+        "##",
+        "<!-- -->",
+        "**"
+      ],
+      "correct": 0
+    },
+    {
+      "id": 8,
+      "question": "Which method is used to select an element by id in JavaScript?",
+      "choices": [
+        "getElementByClass()",
+        "querySelectorAll()",
+        "getElementById()",
+        "selectById()"
+      ],
+      "correct": 2
+    },
+    {
+      "id": 9,
+      "question": "Which company developed JavaScript?",
+      "choices": [
+        "Microsoft",
+        "Netscape",
+        "Google",
+        "Apple"
+      ],
+      "correct": 1
+    },
+    {
+      "id": 10,
+      "question": "Which HTML tag is used for the largest heading?",
+      "choices": [
+        "<h6>",
+        "<heading>",
+        "<h1>",
+        "<head>"
+      ],
+      "correct": 2
+    }
+  ]
+}
