@@ -8,6 +8,7 @@ let prevBtn = document.getElementById("prevbtn")
 let questionExam = document.getElementById("questionExam")
 let currentNumber = document.getElementById("currentnumber")
 let allNumber = document.getElementById("allnumber")
+// let timer = document.getElementById("timer").textContent
 
 btnmark.addEventListener("click", function () {
    markside.classList.toggle("hidden")
@@ -122,3 +123,18 @@ function updateMarkSide() {
 }
 
 
+
+let timerElement = document.getElementById("timer");
+
+for (let i = 60; i >= 0; i--) {
+    setTimeout(function () {
+        timerElement.textContent = `0:${i}`;
+        console.log(`0:${i}`);
+    }, (60 - i) * 1000);
+}
+
+
+
+setTimeout(function () {
+   window.location.href = "timeout.html";
+}, 60000)
