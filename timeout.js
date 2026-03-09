@@ -7,3 +7,9 @@ const lname = userData.lname;
 
 
 let name = document.getElementById("name").textContent = `${fname} ${lname}`;
+
+let logout = document.getElementById("logout");
+
+logout.addEventListener ("click", function (){
+    localStorage.clear();
+}) 
