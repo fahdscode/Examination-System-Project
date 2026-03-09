@@ -136,11 +136,13 @@ function updateMarkSide() {
 }
 
 let timerElement = document.getElementById("timer");
+let progressBar = document.getElementById("progressBar");
 
 for (let i = 60; i >= 0; i--) {
   setTimeout(
     function () {
       timerElement.textContent = `0:${i}`;
+      progressBar.style.width = `${(60 - i) * (100 / 60)}%`;
       // console.log(`0:${i}`);
     },
     (60 - i) * 1000,

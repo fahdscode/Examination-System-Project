@@ -13,3 +13,10 @@ console.log(result)
 
 let scoreElement = document.getElementById("score").textContent = `${result}/9`
 
+let logout = document.getElementById("logout");
+
+logout.addEventListener ("click", function (){
+    window.location.href = "index.html";
+    localStorage.clear();
+
+}) 
