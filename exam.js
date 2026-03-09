@@ -10,6 +10,8 @@ let currentNumber = document.getElementById("currentnumber")
 let allNumber = document.getElementById("allnumber")
 // let timer = document.getElementById("timer").textContent
 
+
+
 btnmark.addEventListener("click", function () {
    markside.classList.toggle("hidden")
 
