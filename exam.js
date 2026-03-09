@@ -69,7 +69,7 @@ async function getQuestion() {
 
 getQuestion();
 
-let i = 1;
+
 nextBtn.addEventListener("click", function () {
   if (currentQuestionIndex < arrOfQuestion.length - 1) {
     currentQuestionIndex++; //arrOfQuestion[Math.floor(Math.random() * 10)]
@@ -102,17 +102,6 @@ prevBtn.addEventListener("click", function () {
   }
 });
 
-// console.log(currentQuestionIndex);
-
-   if (currentQuestionIndex > 0) {
-      currentQuestionIndex--
-      selectedQuestionUI(arrOfQuestion[currentQuestionIndex])
-      currentNumber.innerHTML = currentQuestionIndex + 1
-   }
-   if (currentQuestionIndex === 0) {
-      prevBtn.classList.add("hid")
-   }
-})
 
 
 
@@ -130,11 +119,6 @@ function updateMarkSide() {
   for (let i = 0; i < markedQuestions.length; i++) {
     let box = ``;
     box = ` <div class="mark-container">
-            <h3>Question${markedQuestions[i] + 1} </h3>
-   markside.innerHTML = ""
-   for (let i = 0; i < markedQuestions.length; i++) {
-      let box = ``
-      box = ` <div class="mark-container">
             <button class="Qmark">Question${markedQuestions[i] + 1} </button>
             <i class="fa-regular fa-circle-xmark exitIcon"></i>
             </div>`;
@@ -150,6 +134,15 @@ function updateMarkSide() {
       updateMarkSide();
     });
   }
+      let  Qmark = document.getElementsByClassName("Qmark")
+      for(let i=0 ; i<Qmark.length;i++){
+      Qmark[i].addEventListener("click" , function(){
+       currentQuestionIndex = markedQuestions[i]
+       selectedQuestionUI(arrOfQuestion[currentQuestionIndex])
+       currentNumber.innerHTML=currentQuestionIndex+1
+      }
+   
+      )}
 }
 
 let timerElement = document.getElementById("timer");
@@ -198,26 +191,11 @@ function getresult() {
     return correct;
 }
 
-   let exitIcon = document.getElementsByClassName("exitIcon")
-   for (let i = 0; i < exitIcon.length; i++) {
-      exitIcon[i].addEventListener("click", function () {
-          markedQuestions.splice(i, 1)
-       
-          updateMarkSide()
-      })
 
-   }
+ 
+   
 
-   let  Qmark = document.getElementsByClassName("Qmark")
-   for(let i=0 ; i<Qmark.length;i++){
-   Qmark[i].addEventListener("click" , function(){
-    currentQuestionIndex = markedQuestions[i]
-    selectedQuestionUI(arrOfQuestion[currentQuestionIndex])
-    currentNumber.innerHTML=currentQuestionIndex+1
-   }
 
-   )}
 
-}
 
 
