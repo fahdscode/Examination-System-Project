@@ -86,8 +86,13 @@ nextBtn.addEventListener("click", function () {
       currentQuestionIndex++ //arrOfQuestion[Math.floor(Math.random() * 10)]
       selectedQuestionUI(arrOfQuestion[currentQuestionIndex])
    }
+   if (currentQuestionIndex === 8) {
+   nextBtn.classList.add("hid")
+   }
+   
    currentNumber.innerHTML = currentQuestionIndex + 1
 
+   
    prevBtn.classList.remove("hid")
 
 
@@ -106,6 +111,11 @@ prevBtn.addEventListener("click", function () {
    if (currentQuestionIndex === 0) {
       prevBtn.classList.add("hid")
    }
+   
+      if(currentQuestionIndex < 8) {
+      nextBtn.classList.remove("hid")
+   }
+
 })
 
 console.log(currentQuestionIndex)
@@ -163,6 +173,11 @@ setTimeout(function () {
    window.location.href = "timeout.html";
 }, 60000)
 
+
+let submit = document.getElementById("submit");
+submit.addEventListener("click", function () {
+      window.location.href = "success.html";
+})
 
 
 //to submit

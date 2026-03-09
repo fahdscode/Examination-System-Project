@@ -5,3 +5,4 @@ const lname = userData.lname;
 
 
 let name = document.getElementById("name").textContent = `${fname} ${lname}`;
+
