@@ -15,6 +15,20 @@ btnmark.addEventListener("click", function () {
 
 })
 
+
+// local storage of answers
+
+let answers = JSON.parse(localStorage.getItem("answers")) || []
+//function savedAnswers(questionIndex, choiceIndex) {
+window.savedAnswers = function (questionIndex, choiceIndex) {
+   answers[questionIndex] = choiceIndex
+   console.log(answers)
+   localStorage.setItem("answers", JSON.stringify(answers))
+
+}
+
+
+
 let arrOfQuestion = []
 let currentQuestionIndex = 0
 
@@ -25,10 +39,16 @@ function selectedQuestionUI(currentQuestion) {
    box = ` <p>${currentQuestion.question}</p>`
 
    for (let j = 0; j < currentQuestion.choices.length; j++) {
+
+      // to saved the prev choice at ui
+
+      let checkedValue = answers[currentQuestionIndex] === j ? "checked" : ""
+      // 
       box += `
                 <div class="answer-container">
                     <label>
-                        <input type="radio" name="question${currentQuestionIndex}" class="choice">
+                        <input type="radio" name="question${currentQuestionIndex}" 
+                        class="choice" onclick="savedAnswers(${currentQuestionIndex},${j})" ${checkedValue}>
                         ${currentQuestion.choices[j]}
                     </label>
                 </div>
@@ -51,6 +71,8 @@ async function getQuestion() {
    if (currentQuestionIndex === 0) {
       prevBtn.classList.add("hid")
    }
+
+   examDegree(answers[currentQuestionIndex],arrOfQuestion[currentQuestionIndex].correct)
 
 }
 
@@ -114,9 +136,9 @@ function updateMarkSide() {
    let exitIcon = document.getElementsByClassName("exitIcon")
    for (let i = 0; i < exitIcon.length; i++) {
       exitIcon[i].addEventListener("click", function () {
-          markedQuestions.splice(i, 1)
-       
-          updateMarkSide()
+         markedQuestions.splice(i, 1)
+
+         updateMarkSide()
       })
 
    }
@@ -127,10 +149,10 @@ function updateMarkSide() {
 let timerElement = document.getElementById("timer");
 
 for (let i = 60; i >= 0; i--) {
-    setTimeout(function () {
-        timerElement.textContent = `0:${i}`;
-        console.log(`0:${i}`);
-    }, (60 - i) * 1000);
+   setTimeout(function () {
+      timerElement.textContent = `0:${i}`;
+      console.log(`0:${i}`);
+   }, (60 - i) * 1000);
 }
 
 
@@ -138,3 +160,17 @@ for (let i = 60; i >= 0; i--) {
 setTimeout(function () {
    window.location.href = "timeout.html";
 }, 60000)
+
+
+
+//to submit
+// function examDegree(yourAnswer,correctAnswer){
+//     let count=0
+//    if(yourAnswer===correctAnswer){
+//       count++
+//    }
+
+//    console.log(count)
+
+// }
+
