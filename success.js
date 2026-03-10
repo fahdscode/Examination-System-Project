@@ -13,7 +13,7 @@ console.log(result)
 
 function displayResult() {
     if (result === null) {
-        let scoreElement = document.getElementById("score").textContent = `0/9`
+        let scoreElement = document.getElementById("score").textContent = `0/10`
     }
     if (result >=  1) {
 
