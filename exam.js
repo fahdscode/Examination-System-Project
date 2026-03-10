@@ -60,10 +60,10 @@ async function getQuestion() {
     prevBtn.classList.add("hid");
   }
 
-//   examDegree(
-//     answers[currentQuestionIndex],
-//     arrOfQuestion[currentQuestionIndex].correct,
-//   );
+  //   examDegree(
+  //     answers[currentQuestionIndex],
+  //     arrOfQuestion[currentQuestionIndex].correct,
+  //   );
 }
 // console.log(arrOfQuestion);
 
@@ -150,11 +150,13 @@ for (let i = 60; i >= 0; i--) {
 }
 
 setTimeout(function () {
+  
   window.location.href = "timeout.html";
 }, 60000);
 
 let submit = document.getElementById("submit");
 submit.addEventListener("click", function () {
+  getResult();
   window.location.href = "success.html";
 });
 
@@ -170,18 +172,16 @@ submit.addEventListener("click", function () {
 // }
 
 
-let localAnswers = JSON.parse(localStorage.getItem("answers")) || [];
-function getresult() {
+
+function getResult() {
+  const localAnswers = JSON.parse(localStorage.getItem("answers")) || [];
     let correct = 0;
 
     for (let i = 0; i < arrOfQuestion.length; i++) {
         if (localAnswers[i]===arrOfQuestion[i].correct) 
-            correct++
+            correct++;
         
     }
     localStorage.setItem("result", correct);
     return correct;
 }
-
-
-

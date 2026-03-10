@@ -11,7 +11,18 @@ let result = localStorage.getItem("result");
 
 console.log(result)
 
-let scoreElement = document.getElementById("score").textContent = `${result}/9`
+function displayResult() {
+    if (result === null) {
+        let scoreElement = document.getElementById("score").textContent = `0/9`
+    }
+    if (result >=  1) {
+
+        let scoreElement = document.getElementById("score").textContent = `${result}/9`
+    }
+
+}
+displayResult();
+
 
 let logout = document.getElementById("logout");
 
