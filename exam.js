@@ -91,7 +91,7 @@ getQuestion();
 nextBtn.addEventListener("click", function () {
   if (currentQuestionIndex < arrOfQuestion.length - 1) {
     currentQuestionIndex++; //arrOfQuestion[Math.floor(Math.random() * 10)]
-    selectedQuestionUI(arrOfQuestion[currentQuestionIndex]);
+    selectedQuestionUI();
   }
   if (currentQuestionIndex === arrOfQuestion.length-1) {
     nextBtn.classList.add("hid");
@@ -108,7 +108,7 @@ nextBtn.addEventListener("click", function () {
 prevBtn.addEventListener("click", function () {
   if (currentQuestionIndex > 0) {
     currentQuestionIndex--;
-    selectedQuestionUI(arrOfQuestion[currentQuestionIndex]);
+    selectedQuestionUI();
     currentNumber.innerHTML = currentQuestionIndex + 1;
   }
   if (currentQuestionIndex === 0) {
@@ -156,7 +156,7 @@ function updateMarkSide() {
       for(let i=0 ; i<Qmark.length;i++){
       Qmark[i].addEventListener("click" , function(){
        currentQuestionIndex = markedQuestions[i]
-       selectedQuestionUI(arrOfQuestion[currentQuestionIndex])
+       selectedQuestionUI()
        currentNumber.innerHTML=currentQuestionIndex+1
        updateMarkSide();
       }
