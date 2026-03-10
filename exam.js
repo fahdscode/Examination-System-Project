@@ -118,7 +118,7 @@ function updateMarkSide() {
   for (let i = 0; i < markedQuestions.length; i++) {
     let box = ``;
     box = ` <div class="mark-container">
-            <h3>Question${markedQuestions[i] + 1} </h3>
+            <button class="Qmark">Question${markedQuestions[i] + 1} </button>
             <i class="fa-regular fa-circle-xmark exitIcon"></i>
             </div>`;
 
@@ -133,6 +133,16 @@ function updateMarkSide() {
       updateMarkSide();
     });
   }
+      let  Qmark = document.getElementsByClassName("Qmark")
+      for(let i=0 ; i<Qmark.length;i++){
+      Qmark[i].addEventListener("click" , function(){
+       currentQuestionIndex = markedQuestions[i]
+       selectedQuestionUI(arrOfQuestion[currentQuestionIndex])
+       currentNumber.innerHTML=currentQuestionIndex+1
+       updateMarkSide();
+      }
+   
+      )}
 }
 
 let timerElement = document.getElementById("timer");
