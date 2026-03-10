@@ -24,9 +24,27 @@ window.savedAnswers = function (questionIndex, choiceIndex) {
 
 let arrOfQuestion = [];
 let currentQuestionIndex = 0;
+let randomQuestion = []
 
-function selectedQuestionUI(currentQuestion) {
+function getRandomQuestion() {
+  if (randomQuestion.length === 0) {
+    while (randomQuestion.length < arrOfQuestion.length) {
+      let random = Math.floor(Math.random() * arrOfQuestion.length);
+
+      if (!randomQuestion.includes(random)) {
+        randomQuestion.push(random);
+      }
+    }
+  }
+
+  return randomQuestion[currentQuestionIndex];
+}
+
+function selectedQuestionUI() {
   let box = ``;
+
+  let index = getRandomQuestion();
+  let currentQuestion = arrOfQuestion[index];
   box = ` <p>${currentQuestion.question}</p>`;
 
   for (let j = 0; j < currentQuestion.choices.length; j++) {
@@ -52,7 +70,7 @@ async function getQuestion() {
   let result = await data.json();
   arrOfQuestion.push(...result.questions);
   // currentQuestion = arrOfQuestion[0]
-  selectedQuestionUI(arrOfQuestion[currentQuestionIndex]);
+  selectedQuestionUI();
   allNumber.innerHTML = arrOfQuestion.length;
   currentNumber.innerHTML = currentQuestionIndex + 1;
 
@@ -75,7 +93,7 @@ nextBtn.addEventListener("click", function () {
     currentQuestionIndex++; //arrOfQuestion[Math.floor(Math.random() * 10)]
     selectedQuestionUI(arrOfQuestion[currentQuestionIndex]);
   }
-  if (currentQuestionIndex === 8) {
+  if (currentQuestionIndex === arrOfQuestion.length-1) {
     nextBtn.classList.add("hid");
   }
 
@@ -97,7 +115,7 @@ prevBtn.addEventListener("click", function () {
     prevBtn.classList.add("hid");
   }
 
-  if (currentQuestionIndex < 8) {
+  if (currentQuestionIndex < arrOfQuestion.length-1) {
     nextBtn.classList.remove("hid");
   }
 });
@@ -183,11 +201,9 @@ submit.addEventListener("click", function () {
 let localAnswers = JSON.parse(localStorage.getItem("answers")) || [];
 function getresult() {
     let correct = 0;
-
     for (let i = 0; i < arrOfQuestion.length; i++) {
         if (localAnswers[i]===arrOfQuestion[i].correct) 
-            correct++
-        
+            correct++        
     }
     localStorage.setItem("result", correct);
     return correct;
