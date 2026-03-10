@@ -140,6 +140,7 @@ function updateMarkSide() {
        currentQuestionIndex = markedQuestions[i]
        selectedQuestionUI(arrOfQuestion[currentQuestionIndex])
        currentNumber.innerHTML=currentQuestionIndex+1
+       updateMarkSide();
       }
    
       )}
@@ -163,6 +164,7 @@ setTimeout(function () {
 
 let submit = document.getElementById("submit");
 submit.addEventListener("click", function () {
+  getresult()
   window.location.href = "success.html";
 });
 
